@@ -12,7 +12,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let todoItem = ToDoItem(title: "read news", completed: false, createdAt: Date(), itemIdentifier: UUID())
+        let todos = DataManager.loadAll(ToDoItem.self)
+        print(todos)
     }
 
     override func didReceiveMemoryWarning() {
